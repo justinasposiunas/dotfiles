@@ -97,3 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Require Local Folders as Composer Dependencies
+# @see https://calebporzio.com/bash-alias-composer-link-use-local-folders-as-composer-dependancies/
+composer-link() {  
+    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
+}
